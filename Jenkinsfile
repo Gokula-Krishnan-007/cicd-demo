@@ -9,18 +9,21 @@ pipeline {
             }
         }
 
+        
         stage('Test') {
             steps {
                 echo 'Testing application...'
-                bat 'python -m pytest'
+                bat '"C:\\Users\\Gokul\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pip install pytest'
+                bat '"C:\\Users\\Gokul\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pytest'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying application...'
-                bat 'python app.py'
+                bat '"C:\\Users\\Gokul\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" app.py'
             }
         }
+
     }
 }
